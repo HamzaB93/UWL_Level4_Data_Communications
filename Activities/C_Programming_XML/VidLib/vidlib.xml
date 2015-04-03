@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <video>
+    <title>Man Of Steel</title>
+    <genre>Action</genre>
+    <releasedate>2013</releasedate>
+  </video>
+  <video>
+    <title>Batman</title>
+    <genre>Action</genre>
+    <releasedate>1989</releasedate>
+  </video>
+  <video>
+    <title>Taken</title>
+    <genre>Action</genre>
+    <releasedate>2006</releasedate>
+  </video>
+</library>
