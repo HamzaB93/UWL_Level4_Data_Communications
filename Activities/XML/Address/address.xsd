@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="HouseNo">
+	  <xs:simpleType>
+	    <xs:restriction base="xs:integer">
+	      <xs:minInclusive value="1"/>
+	    </xs:restriction>
+	  </xs:simpleType>
+	</xs:element>
+	<xs:element name="HouseName" type="xs:string"/>
+	<xs:element name="FirstLine" type="xs:string"/>
+	<xs:element name="SecondLine" type="xs:string"/>
+	<xs:element name="Country" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
