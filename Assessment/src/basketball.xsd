@@ -21,7 +21,7 @@
 			<xs:enumeration value="East"/>
 			<xs:enumeration value="West"/>
 		</xs:restriction>
-	<xs:simpleType>
+	</xs:simpleType>
 	
 	<!-- ageType to be used for the age of the player -->
 	<xs:simpleType name="ageType">
@@ -51,8 +51,27 @@
 			<xs:enumeration value="Free throw"/>
 		</xs:restriction>
 	</xs:simpleType>
-
 	
-	
+	<!-- Outlining the structure of the XML file with the above -->
+	<!-- data types -->
+	<xs:element name="BasketballTeam">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Team" type="nameType"/>
+				<xs:element name="Conference" type="conferenceType"/>
+				<xs:element name="Player" maxOccurs="5">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Name" type="nameType"/>
+							<xs:element name="Age" type="ageType"/>
+							<xs:element name="Position" type="positionType"/>
+							<xs:element name="Skill" type="skillType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>	
 	
 	
