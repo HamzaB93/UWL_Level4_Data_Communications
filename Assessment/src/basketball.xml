@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BasketballTeam>
+	<Team>Miami Heat</Team>
+	<Conference>East</Conference>
+	<Player>
+		<Name>John Doe</Name>
+		<Age>28</Age>
+		<Number>7</Number>
+		<Position>Point Guard</Position>
+		<Skill>Passing</Skill>
+	</Player>
+	<Player>
+		<Name>Fizz Buzz</Name>
+		<Age>22</Age>
+		<Number>4</Number>
+		<Position>Shooting Guard</Position>
+		<Skill>Shooting</Skill>
+	</Player>
+	<Player>
+		<Name>Foo Bar</Name>
+		<Age>20</Age>
+		<Number>6</Number>
+		<Position>Small Forward</Position>
+		<Skill>Rebounding</Skill>
+	</Player>
+	<Player>
+		<Name>Gen Eric</Name>
+		<Age>25</Age>
+		<Number>44</Number>
+		<Position>Centre</Position>
+		<Skill>Dunking</Skill>
+	</Player>	
+</BasketballTeam>

@@ -30,6 +30,14 @@
 			<xs:maxInclusive value="39"/>
 		</xs:restriction>
 	</xs:simpleType>
+
+	<!-- numberType to used to identify the number assigned to the player -->
+	<xs:simpleType name="numberType">
+	        <xs:restriction base="integer">
+		        <xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
 	
 	<!-- positionType to identify position of the player -->
 	<xs:simpleType name="positionType">
@@ -49,6 +57,8 @@
 			<xs:enumeration value="Shooting"/>
 			<xs:enumeration value="Rebounding"/>
 			<xs:enumeration value="Free throw"/>
+			<xs:enumeration value="Dunking"/>
+			<xs:enumeration value="Dribbling"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -64,6 +74,7 @@
 						<xs:sequence>
 							<xs:element name="Name" type="nameType"/>
 							<xs:element name="Age" type="ageType"/>
+							<xs:element name="Number" type="numberType" />
 							<xs:element name="Position" type="positionType"/>
 							<xs:element name="Skill" type="skillType"/>
 						</xs:sequence>
