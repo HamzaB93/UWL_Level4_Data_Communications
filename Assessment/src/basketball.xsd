@@ -4,85 +4,89 @@
 <!-- the structure of the XML that will be coded in C-->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:include schemaLocation="/usr/local/share/libpackedobjects/packedobjectsDataTypes.xsd"/>
+  <xs:include schemaLocation="/usr/local/share/libpackedobjects/packedobjectsDataTypes.xsd"/>
 
-	<!-- Defining the data types that will be used -->
+  <!-- Defining the data types that will be used -->
   
-	<!-- nameType to be used for Team and Name -->
-	<xs:simpleType name="nameType">
-		<xs:restriction base="string">
-			<xs:maxLength value="50"/>
-		</xs:restriction>
-	</xs:simpleType>
+  <!-- nameType to be used for Team and Name -->
+  <xs:simpleType name="nameType">
+    <xs:restriction base="string">
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
 	
-	<!-- conferenceType to be used to identify conference (East or West) -->
-	<xs:simpleType name="conferenceType">
-		<xs:restriction base="enumerated">
-			<xs:enumeration value="East"/>
-			<xs:enumeration value="West"/>
-		</xs:restriction>
-	</xs:simpleType>
+  <!-- conferenceType to be used to identify conference (East or West) -->
+  <xs:simpleType name="conferenceType">
+    <xs:restriction base="enumerated">
+      <xs:enumeration value="East"/>
+      <xs:enumeration value="West"/>
+    </xs:restriction>
+  </xs:simpleType>
 	
-	<!-- ageType to be used for the age of the player -->
-	<xs:simpleType name="ageType">
-		<xs:restriction base="integer">
-			<xs:minInclusive value="19"/>
-			<xs:maxInclusive value="39"/>
-		</xs:restriction>
-	</xs:simpleType>
+  <!-- ageType to be used for the age of the player -->
+  <xs:simpleType name="ageType">
+    <xs:restriction base="integer">
+      <xs:minInclusive value="19"/>
+      <xs:maxInclusive value="39"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-	<!-- numberType to used to identify the number assigned to the player -->
-	<xs:simpleType name="numberType">
-	        <xs:restriction base="integer">
-		        <xs:minInclusive value="0"/>
-			<xs:maxInclusive value="99"/>
-		</xs:restriction>
-	</xs:simpleType>
+  <!-- numberType to used to identify the number assigned to the player -->
+  <xs:simpleType name="numberType">
+    <xs:restriction base="integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="99"/>
+    </xs:restriction>
+  </xs:simpleType>
 	
-	<!-- positionType to identify position of the player -->
-	<xs:simpleType name="positionType">
-		<xs:restriction base="enumerated">
-			<xs:enumeration value="Point Guard"/>
-			<xs:enumeration value="Shooting Guard"/>
-			<xs:enumeration value="Small Forward"/>
-			<xs:enumeration value="Power Forward"/>
-			<xs:enumeration value="Centre"/>
-		</xs:restriction>
-	</xs:simpleType>
+  <!-- positionType to identify position of the player -->
+  <xs:simpleType name="positionType">
+    <xs:restriction base="enumerated">
+      <xs:enumeration value="Point Guard"/>
+      <xs:enumeration value="Shooting Guard"/>
+      <xs:enumeration value="Small Forward"/>
+      <xs:enumeration value="Power Forward"/>
+      <xs:enumeration value="Centre"/>
+    </xs:restriction>
+  </xs:simpleType>
 	
-	<!-- skillType to identify the players unique skill -->
-	<xs:simpleType name="skillType">
-		<xs:restriction base="enumerated">
-			<xs:enumeration value="Passing"/>
-			<xs:enumeration value="Shooting"/>
-			<xs:enumeration value="Rebounding"/>
-			<xs:enumeration value="Free throw"/>
-			<xs:enumeration value="Dunking"/>
-			<xs:enumeration value="Dribbling"/>
-		</xs:restriction>
-	</xs:simpleType>
+  <!-- skillType to identify the players unique skill -->
+  <xs:simpleType name="skillType">
+    <xs:restriction base="enumerated">
+      <xs:enumeration value="Passing"/>
+      <xs:enumeration value="Shooting"/>
+      <xs:enumeration value="Rebounding"/>
+      <xs:enumeration value="Free throw"/>
+      <xs:enumeration value="Dunking"/>
+      <xs:enumeration value="Dribbling"/>
+    </xs:restriction>
+  </xs:simpleType>
 	
-	<!-- Outlining the structure of the XML file with the above -->
-	<!-- data types -->
-	<xs:element name="BasketballTeam">
+  <!-- Outlining the structure of the XML file with the above -->
+  <!-- data types -->
+  <xs:element name="BasketballTeam">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="Team" type="nameType"/>
+	<xs:element name="Conference" type="conferenceType"/>
+	<xs:element name="Players">
+	  <xs:complexType>
+	    <xs:sequence>
+	      <xs:element name="Player" maxOccurs="5">
 		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="Team" type="nameType"/>
-				<xs:element name="Conference" type="conferenceType"/>
-				<xs:element name="Player" maxOccurs="5">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Name" type="nameType"/>
-							<xs:element name="Age" type="ageType"/>
-							<xs:element name="Number" type="numberType" />
-							<xs:element name="Position" type="positionType"/>
-							<xs:element name="Skill" type="skillType"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
+		  <xs:sequence>
+		    <xs:element name="Name" type="nameType"/>
+		    <xs:element name="Age" type="ageType"/>
+		    <xs:element name="Number" type="numberType" />
+		    <xs:element name="Position" type="positionType"/>
+		    <xs:element name="Skill" type="skillType"/>
+		  </xs:sequence>
 		</xs:complexType>
+	      </xs:element>
+	    </xs:sequence>
+	  </xs:complexType>
 	</xs:element>
-</xs:schema>	
-	
-	
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
