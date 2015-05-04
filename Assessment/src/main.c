@@ -5,8 +5,8 @@
 int main (int argc, char **argv)
 {
   // XML details
-  xmlDocPtr doc = NULL , node = NULL , node2 = NULL;
-  xmlNodePtr root_node = NULL;
+  xmlDocPtr doc = NULL;
+  xmlNodePtr root_node = NULL , node = NULL , node2 = NULL;
   doc = xmlNewDoc(BAD_CAST "1.0");
 
   // Creating xml tree
