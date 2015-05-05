@@ -22,7 +22,7 @@
 int basketball_team(xmlDocPtr doc)
 {
   // Message for user
-  printf("Welcome! Enter details for your Basketball Team");
+  printf("Welcome! Enter details for your Basketball Team.\n");
 
   // Nodes to be used for the XML tree creation
   xmlNodePtr root_node = NULL , node = NULL , node2 = NULL;
@@ -154,6 +154,7 @@ int basketball_team(xmlDocPtr doc)
     strtok(buffer, "\n");
     xmlNewChild(node2, NULL, BAD_CAST "Skill", BAD_CAST buffer);    
   }
+   return EXIT_SUCCESS;
 }
 
 
